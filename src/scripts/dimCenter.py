@@ -8,15 +8,13 @@ from prefect_data_platform.applications.data_and_analytics_homegrid.scripts.util
 
 )
 from prefect_data_platform.applications.data_and_analytics_homegrid.scripts.utils.env import (
-    settings,
-)
+    settings)
 
 import asyncio
 
 config = settings()
 
-
-
+# This is jim's edit!
 @task
 async def Package_SQL___Truncate_Staging_Table_Center(snowflake_conn):
     execute_nonquery(snowflake_conn, "TRUNCATE TABLE ONEHOME_OHSDWSTAGE_ONECARE.DimCenter;")
